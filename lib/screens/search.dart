@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../article.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({Key? key}) : super(key: key);
@@ -27,7 +28,6 @@ class _SearchScreenState extends State<SearchScreen> {
     // Handle search query (e.g., navigate to search results screen)
     print('Performing search for: $query');
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,29 +35,61 @@ class _SearchScreenState extends State<SearchScreen> {
         title: Text('Search'),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextField(
-              controller: _searchController,
-              decoration: InputDecoration(
-                hintText: 'Enter your search query',
-                border: OutlineInputBorder(),
-              ),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                TextField(
+                  controller: _searchController,
+                  decoration: InputDecoration(
+                    hintText: 'Enter your search query',
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+                const SizedBox(height: 16.0),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton.icon(
+                    onPressed: _performSearch,
+                    icon: Icon(Icons.search),
+                    label: Text('Search'),
+                  ),
+                ),
+              ],
             ),
-            const SizedBox(height: 16.0),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: _performSearch,
-                child: Text('Search'),
-              ),
+          ),
+          Expanded(
+            child: ListView(
+              padding: const EdgeInsets.all(16.0),
+              children: [
+                NewsBox(
+                  imageUrl:
+                      'https://images.unsplash.com/photo-1616832880334-b1004d9808da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1336&q=80',
+                  title: 'Breaking News',
+                  subtitle: 'Important news update',
+                  buttonText1: 'Read More',
+                  buttonText2: 'Share',
+                  buttonText3: 'Save',
+                ),
+                NewsBox(
+                  imageUrl:
+                      'https://images.unsplash.com/photo-1616832880334-b1004d9808da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1336&q=80',
+                  title: 'Latest Update',
+                  subtitle: 'Exciting developments',
+                  buttonText1: 'Read More',
+                  buttonText2: 'Share',
+                  buttonText3: 'Save',
+                ),
+                // Add more NewsBox widgets here as needed
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
 }
+
+  
