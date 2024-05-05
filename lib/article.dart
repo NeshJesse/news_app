@@ -6,7 +6,6 @@ class NewsBox extends StatelessWidget {
   final String subtitle;
   final String buttonText1;
   final String buttonText2;
-  final String buttonText3;
 
   const NewsBox({
     required this.imageUrl,
@@ -14,7 +13,6 @@ class NewsBox extends StatelessWidget {
     required this.subtitle,
     required this.buttonText1,
     required this.buttonText2,
-    required this.buttonText3,
     Key? key,
   }) : super(key: key);
 
@@ -52,7 +50,7 @@ class NewsBox extends StatelessWidget {
               subtitle,
               style: const TextStyle(fontSize: 16.0),
             ),
-            const SizedBox(height: 12.0),
+            const SizedBox(height: 8.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -67,12 +65,6 @@ class NewsBox extends StatelessWidget {
                     // Handle button 2 action
                   },
                   child: Text(buttonText2),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    // Handle button 3 action
-                  },
-                  child: Text(buttonText3),
                 ),
               ],
             ),

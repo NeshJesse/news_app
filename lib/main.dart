@@ -84,7 +84,6 @@ class _MainPageState extends State<MainPage> {
               subtitle: 'Important news update',
               buttonText1: 'Read More',
               buttonText2: 'Share',
-              buttonText3: 'Save',
             ),
             NewsBox(
               imageUrl:
@@ -93,7 +92,6 @@ class _MainPageState extends State<MainPage> {
               subtitle: 'Exciting developments',
               buttonText1: 'Read More',
               buttonText2: 'Share',
-              buttonText3: 'Save',
             ),
             // Add more NewsBox widgets here as needed
           ],
