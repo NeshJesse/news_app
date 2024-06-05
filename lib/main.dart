@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/splash.dart';
 import 'article.dart';
 import 'screens/account.dart';
 import 'screens/alerts.dart';
 import 'screens/search.dart';
+import 'splash.dart';
 import 'screens/prog.dart';
 
 void main() {
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: const MainPage(),
+      home: const Splash(),
       debugShowCheckedModeBanner: false,
       routes: {
         '/home': (context) => MainPage(),
