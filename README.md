@@ -1,5 +1,5 @@
 # news_app
-
+My new project demonstration for my flutter project course in PLP LEARNING
 A new Flutter project.
 
 ## Getting Started
